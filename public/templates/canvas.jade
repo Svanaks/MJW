@@ -1,0 +1,61 @@
+doctype html
+head
+	title= "Chatoodle"
+	link(rel='stylesheet', href='css/canvas_style.css')
+	link(rel='stylesheet', href='bower_components/uikit/css/uikit.css')
+	link(rel='stylesheet', href='bower_components/uikit/css/components/form-file.css')
+	script(src='http://code.jquery.com/jquery-1.9.1.min.js')
+	script(src='libs/paper-full.min.js')
+	script(src='/socket.io/socket.io.js')
+	script(src='js/connect.js')
+	script(src='js/chat.js')
+	script(src='js/draw.js')
+body
+	//- #title_div
+	//- 	p Chatoodle
+	//- #canvas_chat
+	//- 	#chat_div
+	//- 		div#users_online
+	//- 			ul#online_list
+	//- 	#canvas_div
+	//- 		p#canvas_header Canvas:
+	//- 			#canvas_controls
+	//- 				input#pencil(type='Button',value='Pencil')
+	//- 				| Thickness:
+	//- 				input#thick_txt(type='text',value='2')
+	//- 				input#thick_range(type='range',min='1',max='100',step='1',value='2')
+	//- 				| Color:
+	//- 				input#color_picker(type='color',value='#000000')
+	//- 		canvas#draw_area
+	//- 		//- script(type="text/paperscript", src="/draw.js", canvas="draw_area")
+	//- 	#chat_content
+	//- 	#chat_controls
+	//- 		p.chat Chat: in room #{room}
+	//- 			div.inner_container
+	//- 				//- input#name(disabled)
+	//- 				//- br
+	//- 				input#chat_input(type='text')
+	//- 				script.
+	//- 					var name = '#{username}';
+	//- 					var room = '#{room}';
+	//- 		p.chat Users Online:
+	#canvas_chat.uk-grid
+		div#users_online.uk-width-medium-1-4.uk-row-first
+			ul#online_list
+		#canvas_div.uk-width-medium-3-4
+			#canvas_controls
+				input#pencil(type='Button',value='Pencil')
+				| Thickness:
+				input#thick_txt(type='text',value='2')
+				input#thick_range(type='range',min='1',max='100',step='1',value='2')
+				| Color:
+				input#color_picker(type='color',value='#000000')
+			canvas#draw_area
+			//- script(type="text/paperscript", src="/draw.js", canvas="draw_area")
+			#chat_content.uk-panel
+			#chat_controls.uk-panel
+				div.inner_container
+					input#chat_input(type='text')
+					script.
+						var name = '#{username}';
+						var room = '#{room}';

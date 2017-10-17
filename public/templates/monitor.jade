@@ -1,0 +1,24 @@
+doctype html
+head
+	title= "Chatoodle (Monitor)"
+body
+	h1 MJW
+	h2 Monitoring
+	//- ol
+	//- 	each room, key in roomList
+	//- 		li Room name: #{key}
+	//- 			ol
+	//- 				each uname in room.users
+	//- 					li Username logged in: #{uname} at location IP: #{userList[uname].ip}
+	each room, key in roomList
+		h1 ROOM - #{key}
+		table.uk-table.uk-table-striped
+			thead
+				tr
+					th Username
+					th IP   
+			tbody
+				each uname in room.users
+					tr
+						td #{uname}
+						td #{userList[uname].ip}
